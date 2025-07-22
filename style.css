@@ -1,0 +1,931 @@
+/* ========================
+   RESET & BASE STYLES
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========================
+   NAVIGATION BAR
+======================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 16px 32px;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #4285f4;
+}
+
+.book-button a {
+  text-decoration: none;
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.book-button a:hover {
+  background-color: #2f6fe0;
+}
+
+/* ========================
+   PARALLAX HERO SECTION
+======================== */
+.parallax-section {
+  position: relative;
+  background-image: url('img/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  z-index: 0;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+.parallax-content {
+  color: white;
+  max-width: 500px;
+  margin-left: 200px;
+  z-index: 2;
+}
+
+.rating {
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 18px;
+}
+
+.reviews {
+  color: white;
+  font-weight: 500;
+}
+
+.parallax-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.parallax-content .description {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #4285f4;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #2f6fe0;
+}
+
+.btn-video {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-video span {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+.appointments {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+}
+
+.appt-text strong {
+  font-size: 16px;
+}
+
+.appt-text small {
+  color: white;
+}
+
+/* ========================
+   SERVICES SECTION
+======================== */
+.services-section {
+  padding: 100px 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.services-heading h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Base Service Card */
+.service-card {
+  background-color: #f7fafd;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+}
+
+/* Icon Style Card */
+.service-card:not(.blog-style-card) {
+  padding: 30px 25px;
+}
+
+.service-icon {
+  font-size: 32px;
+  background: #e5f0ff;
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover h3 {
+  transform: scale(1.05);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/* Blog-Style Card (Expanded Info Style) */
+.blog-style-card {
+  padding: 0;
+  text-align: left;
+  align-items: stretch;
+}
+
+/* Image Section */
+.blog-style-card .card-image {
+  position: relative;
+}
+
+.blog-style-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.blog-style-card .date-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #4285f4;
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.blog-style-card .date-badge .day {
+  display: block;
+  font-size: 20px;
+}
+
+/* Content */
+.blog-style-card .card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-style-card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+.blog-style-card .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.blog-style-card .card-description {
+  font-size: 14px;
+  color: #555;
+  flex-grow: 1;
+}
+
+.blog-style-card .card-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 0;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #4285f4;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-style-card .card-btn:hover {
+  color: #4285f4;
+  border: 2px solid #4285f4;
+  transform: scale(1.05);
+}
+
+
+
+/* ========================
+   ABOUT SECTION
+======================== */
+.about-section {
+  padding: 100px 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.about-section h2,
+.about-section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ========================
+   ANIMATIONS FOR ABOUT
+======================== */
+.about-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================
+   ABOUT INTRO (UPDATED)
+======================== */
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.about-intro-text {
+  flex: 1 1 500px;
+}
+
+.about-intro-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.about-intro-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-video {
+  flex: 1 1 500px;
+}
+
+.about-video iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================
+   MODERN MISSION BLOCK
+======================== */
+.about-mission.modern-mission {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-top: 80px;
+}
+
+.mission-image-block {
+  flex: 1 1 480px;
+  text-align: center;
+}
+
+.mission-image-block img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.mission-content-block {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-tag {
+  color: #4285f4;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.mission-content-block h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+}
+
+.mission-point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.icon-circle {
+  background-color: #f0f4ff;
+  color: #4285f4;
+  font-size: 18px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+
+.mission-point h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #222;
+}
+
+.mission-point p,
+.mission-values {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mission-values {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.mission-values li {
+  margin-bottom: 8px;
+}
+
+.mission-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.mission-btn:hover {
+  background-color: #2f6fe0;
+}
+
+/* ========================
+   TEAM SECTION (FLIP CARDS)
+======================== */
+.about-team {
+  margin-top: 60px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.team-member {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-inner:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card-front h4 {
+  font-size: 18px;
+  color: #222;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  font-size: 14px;
+  color: #555;
+  padding: 20px;
+}
+
+/* ========================
+   RESPONSIVE FIXES
+======================== */
+@media (max-width: 768px) {
+  .about-mission.modern-mission {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-content-block {
+    align-items: center;
+  }
+
+  .mission-point {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .mission-btn {
+    align-self: center;
+  }
+
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+
+
+
+/* ========================
+   ENTRANCE ANIMATIONS
+======================== */
+.animate-navbar,
+.animate-parallax {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-navbar.show,
+.animate-parallax.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-services {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.animate-services.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================
+   RESPONSIVE MEDIA QUERIES
+======================== */
+@media (max-width: 992px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .book-button {
+    margin-top: 10px;
+  }
+
+  .parallax-content {
+    margin-left: 40px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-button {
+    margin: 10px 0;
+  }
+
+  .parallax-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .parallax-content h1 {
+    font-size: 32px;
+  }
+
+  .parallax-content .description {
+    font-size: 16px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-video {
+    width: 100%;
+    text-align: center;
+  }
+
+  .appointments {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .services-section {
+    padding: 60px 20px;
+  }
+
+  .services-heading h2 {
+    font-size: 24px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-icon img {
+    width: 32px;
+    height: auto;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-video {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .service-icon {
+    font-size: 24px;
+    padding: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+}
+
+/* ========================
+   CONTACT US SECTION
+======================== */
+.contact-section {
+  position: relative;
+  padding: 100px 40px;
+  background: #f7fafd;
+}
+
+.contact-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ✅ Map takes 100% width */
+.contact-map {
+  width: 70%;
+  height: 500px;
+  margin-right: 10%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ✅ Contact info absolutely overlays the map */
+.contact-info {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  transform: translateX(40%);
+  max-width: 380px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.contact-info h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #111;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.info-item .icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.info-item p a{
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* ✅ Animations (as before) */
+.contact-animate-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s ease;
+}
+.contact-animate-left.show {
+  opacity: 1;
+  transform: translateX(10%);
+}
+
+.contact-animate-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s ease;
+}
+.contact-animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    margin-bottom: 20px;
+    box-shadow: none;
+  }
+}
+
+
+/* ========================
+    FOOTER SECTION
+======================== */
+.footer-section {
+  background: #f7fafd;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-copy {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    gap: 12px;
+    font-size: 14px;
+  }
+}

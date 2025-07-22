@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Medical-Bridge-demo</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+</head>
+<body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    // Animate on load
+      document.querySelector(".animate-navbar")?.classList.add("show");
+      setTimeout(() => {
+        document.querySelector(".animate-parallax")?.classList.add("show");
+      }, 400);
+
+    // Scroll-triggered animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      }, { threshold: 0.2 });
+
+    // Observe multiple animated sections
+      document.querySelectorAll(".animate-services").forEach(el => observer.observe(el));
+      document.querySelectorAll(".about-animate").forEach(el => observer.observe(el));
+      document.querySelectorAll('.contact-animate-left, .contact-animate-right').forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <header class="navbar animate-navbar">
+    <div class="navbar-container">
+      <!-- Left Logo and Text -->
+      <div class="logo-section">
+        <div class="logo-icon"><img src="https://medical-bridge.com/wp-content/uploads/medical-bridge-logo.png"></div>
+      </div>
+
+      <!-- Center Menu -->
+      <nav class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">Про нас</a>
+        <a href="#courses">Курс</a>
+        <a href="#contact">наші контакти</a>
+      </nav>
+
+      <!-- Right Button -->
+      <div class="book-button">
+        <a href="#courses">Запис на курс</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Parallax Hero Section -->
+  <section class="parallax-section" id="home">
+    <div class="parallax-content animate-parallax">
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="reviews">980+ позитивних відгуків</span>
+      </div>
+
+      <h1>Digital маркетинг для професіоналів охорони здоров'я</h1>
+      <p class="description">
+        Підвищуйте свою кваліфікацію з нами — гнучко, ефективно та інноваційно
+      </p>
+
+      <div class="cta-buttons">
+        <a href="#courses" class="btn-primary">Запис на курс</a>
+        <a href="https://youtu.be/fANFUAK9WUI" class="btn-video"><span>&#9658;</span> Дивитись відео</a>
+      </div>
+
+      <div class="appointments">
+        <div class="avatars">
+          <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="user1">
+          <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="user2">
+          <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="user3">
+        </div>
+        <div class="appt-text">
+          <strong>5000+ Клієнтів</strong><br>
+          <small></small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section animate-services" id="courses">
+    <div class="services-heading">
+      <h2>Курси</h2>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">03</span>
+            <span class="month">АПР</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Вебинары</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">УТрансформуйте ваш підхід до лікування ВЗК</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">21</span>
+            <span class="month">MAR</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Онлайн навчання</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">Ультразвукова діагностика очного яблука</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">21</span>
+            <span class="month">MAR</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Онлайн навчання</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">Ультразвукова діагностика очного яблука</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">21</span>
+            <span class="month">MAR</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Онлайн навчання</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">Ультразвукова діагностика очного яблука</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">21</span>
+            <span class="month">MAR</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Онлайн навчання</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">Ультразвукова діагностика очного яблука</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+      <div class="service-card blog-style-card">
+        <div class="card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuIt7YgVUWTCmkRJwHrt4MzRPsmADGVMc7w&s" alt="Service image">
+          <div class="date-badge">
+            <span class="day">21</span>
+            <span class="month">MAR</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="meta">
+            <span class="author">👤 Leonid Kudrenko</span>
+            <span class="category">📁 Онлайн навчання</span>
+            <!-- <span class="comments">💬 0 коментарів</span> -->
+          </div>
+          <h3 class="card-title">Ультразвукова діагностика очного яблука</h3>
+          <p class="card-description">
+            Ультразвукова діагностика відіграє ключову роль у сучасній медицині...
+          </p>
+          <a href="#" class="card-btn">Дізнатись більше →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="about-section" id="about">
+    <!-- Intro -->
+    <div class="about-intro about-animate">
+      <div class="about-intro-text">
+        <h2>Про нас</h2>
+        <p>
+          Ми пишаємося нашою високоякісною та актуальною базою даних, лікарів та обширну класифікацію пацієнтів для роботи з аптеками,
+          поділену на 200 сегментів згідно з нозологіями. Наші передові технології та машинне навчання дозволяють нам глибоко
+          зрозуміти потреби кожного споживача, що сприяє точному та ефективному задоволенню їх інформаційних запитів.
+        </p>
+      </div>
+      <div class="about-video">
+        <iframe src="https://www.youtube.com/embed/fANFUAK9WUI" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="about-mission modern-mission about-animate">
+      <div class="mission-image-block">
+        <img src="img/mission2.png" alt="Mission image">
+      </div>
+      <div class="mission-content-block">
+        <h2>Місія компанії — ефективна комунікація та здорове майбутнє</h2>
+
+        <div class="mission-point">
+          <div class="icon-circle">📌</div>
+          <div>
+            <h4>Наша місія</h4>
+            <p>
+              Надати медичним фахівцям ефективні засоби комунікації, які сприятимуть позитивним змінам у галузі охорони здоров'я для всіх.
+            </p>
+          </div>
+        </div>
+
+        <div class="mission-point">
+          <div class="icon-circle">✨</div>
+          <div>
+            <h4>Наші цінності</h4>
+            <ul class="mission-values">
+              <li><strong>Доступність:</strong> сучасні технології маркетингу для всіх</li>
+              <li><strong>Приватність:</strong> безпечне збереження вашої інформації</li>
+              <li><strong>Етика:</strong> відкрите та відповідальне ведення діяльності</li>
+              <li><strong>Інновації:</strong> впровадження нових методик для медицини</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="#what-we-do" class="mission-btn">Дізнатися більше</a>
+      </div>
+    </div>
+
+    <div class="about-team about-animate">
+      <h3>Наша команда</h3>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anna">
+              <h4>Dr. Anna Petrova</h4>
+            </div>
+            <div class="card-back">
+              Chief Medical Officer with 15+ years of experience in global healthcare initiatives.
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John">
+              <h4>John Malik</h4>
+            </div>
+            <div class="card-back">
+              Director of Operations, overseeing international medical logistics and partnerships.
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Alex">
+              <h4>Alex Kim</h4>
+            </div>
+            <div class="card-back">
+              Patient Coordinator ensuring smooth and personalized care experiences.
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Lisa">
+              <h4>Lisa Martinez</h4>
+            </div>
+            <div class="card-back">
+              Healthcare Marketing Specialist focused on patient outreach and education.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <!-- Left: Info Block -->
+      <div class="contact-info contact-animate-left">
+        <h2>Наші контакти</h2>
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div>
+            <h4>Локація</h4>
+            <p>г.Киев, ул. Западынская, 5</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📞</span>
+          <div>
+            <h4>Телефон</h4>
+            <p><a href="tel:+380931234567">+38 (050) 352-83-66</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">✉️</span>
+          <div>
+            <h4>Електронна пошта</h4>
+            <p>info@medical-bridge.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Google Map -->
+      <div class="contact-map contact-animate-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.5854105402095!2d30.445169376670815!3d50.50690197160299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cd7f830a37df%3A0x4613393340ae7620!2z0YPQuy4g0JfQsNC_0LDQtNC40L3RgdC60LDRjywgNSwg0JrQuNC10LIsINCj0LrRgNCw0LjQvdCwLCAwNDEyMw!5e1!3m2!1sru!2sus!4v1753154086985!5m2!1sru!2sus"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <div class="footer-container">
+      <p class="footer-copy">© Medical Bridge</p>
+    </div>
+  </footer>
+
+</body>
+</html>
