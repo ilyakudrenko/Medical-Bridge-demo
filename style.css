@@ -75,6 +75,76 @@ body {
   background-color: #2f6fe0;
 }
 
+/* Default logo styles */
+.desktop-logo {
+  display: block;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* Hamburger icon */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: #111;
+  border-radius: 3px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .logo-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+    margin-left: 10%;
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .book-button {
+    display: none;
+  }
+}
+
 /* ========================
    PARALLAX HERO SECTION
 ======================== */
@@ -642,6 +712,41 @@ body {
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+
+   /* Video part full width and smaller spacing */
+  .about-video {
+    flex: 1 1 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-video iframe {
+    width: 100%;
+    height: 240px; /* adjust height for mobile */
+  }
+
+  .about-intro {
+    gap: 20px; /* reduce spacing between text and video */
+    margin-bottom: 40px;
+  }
+
+  /* Mission image full width and smaller spacing */
+  .mission-image-block {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .mission-image-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .about-mission.modern-mission {
+    gap: 20px;
+    margin-top: 40px;
+  }
+
 }
 
 
@@ -892,6 +997,11 @@ body {
 
 /* ✅ Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .contact-info {
     position: relative;
     top: 0;
@@ -899,7 +1009,23 @@ body {
     transform: none;
     max-width: 100%;
     margin-bottom: 20px;
+    width: 100%;
+    padding: 0;
+    background: none;
     box-shadow: none;
+  }
+
+
+  .contact-map {
+    width: 100%;
+    height: 300px;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .contact-map iframe {
+    width: 100%;
+    height: 100%;
   }
 }
 
