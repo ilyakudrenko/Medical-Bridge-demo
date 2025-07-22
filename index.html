@@ -6,6 +6,7 @@
 	<title>Medical-Bridge-demo</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 </head>
 <body>
@@ -40,14 +41,30 @@
     <div class="navbar-container">
       <!-- Left Logo and Text -->
       <div class="logo-section">
-        <div class="logo-icon"><img src="https://medical-bridge.com/wp-content/uploads/medical-bridge-logo.png"></div>
+       <!-- Desktop Logo -->
+       <div class="logo-icon desktop-logo">
+        <img src="img/medical-bridge-logo.png" alt="Logo">
       </div>
 
+      <!-- Mobile Logo -->
+      <div class="logo-icon mobile-logo">
+        <img src="img/favicon.png" alt="Mobile Logo">
+      </div>
+    </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+
       <!-- Center Menu -->
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="nav-menu">
         <a href="#home">Home</a>
         <a href="#about">Про нас</a>
-        <a href="#courses">Курс</a>
+        <a href="#courses">Курсы</a>
         <a href="#contact">наші контакти</a>
       </nav>
 
@@ -377,6 +394,17 @@
       <p class="footer-copy">© Medical Bridge</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
